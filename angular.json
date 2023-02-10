@@ -25,9 +25,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
+              
+                "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+                "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "./node_modules/font-awesome/css/font-awesome.min.css",
+                "src/styles.css"
+              ],
+              "scripts": []
           },
           "configurations": {
             "production": {
@@ -94,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "20249ee1-db75-4c22-8ca5-2b10269ec9ce"
   }
 }
