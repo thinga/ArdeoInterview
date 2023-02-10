@@ -1,0 +1,39 @@
+<p>Schadenberichte</p>
+<button style="background-color: red;"
+class="w-10 btn btn-lg btn-primary" type="submit" fdprocessedid="5a0sq" (click)="getUser()" >+Schadenfall</button> 
+<div class="row mb-3 text-center">
+    <table style="width:50%">
+    
+    <ul class="users">
+        <li *ngFor="let user of users">
+            <div class="row mb-3 text-center">
+                <div class="col-4 themed-grid-col">ID</div>
+                <div class="col-4 themed-grid-col">Name</div>
+                <div class="col-4 themed-grid-col">Status</div>
+                <hr>
+                <div class="col-4 themed-grid-col">{{user.id}} <a routerLink="/detail/{{user.id}}"></a></div>
+                <div class="col-4 themed-grid-col">{{user.name}}</div>
+                <div class="col-4 themed-grid-col">{{user.status}}</div>
+                <div class="col-4 themed-grid-col">{{user.erstellen}}</div>
+                <div class="col-4 themed-grid-col">{{user.email}}</div>
+              </div>
+          
+        </li>
+    </ul>
+         
+</table>
+</div>
+
+<ul class="users">
+    <li *ngFor="let user of users">
+      <a routerLink="/detail/{{user.id}}">
+        <span class="badge">{{user.id}}</span>
+        <span class="">{{user.name}}</span>,
+        <span class="">{{user.status}}</span>,
+        <span class="">{{user.erstellen}}</span>,
+        <span class="">{{user.email}}</span>
+      </a>
+      
+        <button type="button" class="delete" title="delete user" >x</button>
+    </li>
+</ul>

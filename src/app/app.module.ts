@@ -9,12 +9,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { NavComponent } from './nav/nav.component';
+import { SchadenberichteComponent } from './schadenberichte/schadenberichte.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { UpperCasePipe } from '@angular/common';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavComponent
+    NavComponent,
+    SchadenberichteComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +30,7 @@ import { NavComponent } from './nav/nav.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
 
 // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
 // and returns simulated server responses.
@@ -31,7 +39,7 @@ HttpClientInMemoryWebApiModule.forRoot(
   InMemoryDataService, { dataEncapsulation: false }
 )
   ],
-  providers: [],
+  providers: [Location, UpperCasePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
