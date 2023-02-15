@@ -11,22 +11,19 @@ import { UserService } from '../services/user.service';
 })
 export class DetailComponent implements OnInit {
   user: User | undefined;
-  updateForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
-  });
-
   constructor(private route: ActivatedRoute,
-    private usersService: UserService) { }
+    private userService: UserService) { }
   
   ngOnInit(): void {
-    this.getUser();
+    //this.getUser();
   }
+
+ 
   
-  getUser(): void {
-    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
+  /*getUser(): void {
+   const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.usersService.getUser(id).subscribe(user => this.user = user);
-  }
+  } */
 
   goBack(): void {
     
@@ -34,7 +31,7 @@ export class DetailComponent implements OnInit {
   
   save(): void {
     if (this.user) {
-      this.usersService.updateUser(this.user)
+      this.userService.updateUser(this.user)
       .subscribe(() => this.goBack())
     }
   }

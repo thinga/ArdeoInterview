@@ -11,6 +11,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  displayedColums: string[]= ['id', 'name', ]
   users: User[] = [];
   loginForm = new FormGroup({
     email: new FormControl('', Validators.required),

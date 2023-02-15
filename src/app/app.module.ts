@@ -13,6 +13,11 @@ import { SchadenberichteComponent } from './schadenberichte/schadenberichte.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { UpperCasePipe } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { MatButtonModule } from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import { ColorDirective } from './color.directive';
 
 
 
@@ -21,7 +26,9 @@ import { UpperCasePipe } from '@angular/common';
     AppComponent,
     LoginComponent,
     NavComponent,
-    SchadenberichteComponent
+    SchadenberichteComponent,
+    CreateUserComponent,
+    ColorDirective
   ],
   imports: [
     BrowserModule,
@@ -31,6 +38,9 @@ import { UpperCasePipe } from '@angular/common';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatTableModule,
+    MatButtonModule,
+    MatSelectModule,
 
 // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
 // and returns simulated server responses.
@@ -39,7 +49,7 @@ HttpClientInMemoryWebApiModule.forRoot(
   InMemoryDataService, { dataEncapsulation: false }
 )
   ],
-  providers: [Location, UpperCasePipe],
+  providers: [Location, UpperCasePipe, ColorDirective],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
